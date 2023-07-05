@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import ContactCard from "../component/ContactCard.js";
-import Modal from "../component/Modal";
+import { ContactCard } from "../component/ContactCard.js";
+import { Modal } from "../component/Modal";
 import { Context } from "../store/appContext.js";
 
 export const Contacts = () => {
