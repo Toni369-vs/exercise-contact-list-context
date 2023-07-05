@@ -1,5 +1,3 @@
-
-
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
@@ -7,22 +5,17 @@ const getState = ({ getStore, setStore }) => {
 		},
 
 		actions: {
+			// OBTERNER CONTACTO
+
 			getAllContacts: () => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/agenda/{agenda_slug}", {
+				fetch("https://assets.breatheco.de/apis/fake/contact/agenda", {
 					method: "GET"
 				})
-					.then(response => {
-						if (!response.ok) {
-							throw new Error("Error al obtener los contactos");
-						}
-						return response.json();
-					})
-					.then(data => {
-						setStore({ contacts: data });
-						console.log(data);
-					})
+					.then(response => response.json())
+					.then(data => setStore({ contacts: data }))
 					.catch(error => console.log(error));
 			},
+
 			// CREAR CONTACTO
 
 			createContact: (full_name, address, phone, email) => {
@@ -32,23 +25,16 @@ const getState = ({ getStore, setStore }) => {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						"full_name": full_name,
-						"address": address,
-						"agenda_slug": "my_super_agenda",
-						"phone": phone,
-						"email": email,
-					}),
+						full_name: full_name,
+						email: email,
+						agenda_slug: "ToniCM",
+						address: address,
+						phone: phone
+					})
 				})
-				.then(response => {
-					if (!response.ok) {
-						throw new Error("Error al crear el contacto");
-					}
-					return response.json();
-				})
-				.then(data => {
-					console.log(data);
-				})
-				.catch(error => console.log(error));
+					.then(response => response.json())
+					.then(data => console.log(data))
+					.catch(error => console.log(error));
 			},
 
 			// MODIFICAR CONTACTO
@@ -60,23 +46,16 @@ const getState = ({ getStore, setStore }) => {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						"full_name": full_name,
-						"address": address,
-						"agenda_slug": "ToniCM",
-						"phone": phone,
-						"email": email,
-					}),
+						full_name: full_name,
+						email: email,
+						agenda_slug: "ToniCM",
+						address: address,
+						phone: phone
+					})
 				})
-				.then(response => {
-					if (!response.ok) {
-						throw new Error("Error al crear el contacto");
-					}
-					return response.json();
-				})
-				.then(data => {
-					console.log(data);
-				})
-				.catch(error => console.log(error));
+					.then(response => response.json())
+					.then(data => console.log(data))
+					.catch(error => console.log(error));
 			}
 		}
 	};
