@@ -22,11 +22,11 @@ const getState = ({ getStore, setStore }) => {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						full_name: full_name,
-						email: email,
-						agenda_slug: "ToniCM",
-						address: address,
-						phone: phone
+						"full_name": full_name,
+						"email": email,
+						"agenda_slug": "ToniCM",
+						"address": address,
+						"phone": phone
 					})
 				})
 					.then(response => response.json())
@@ -44,11 +44,11 @@ const getState = ({ getStore, setStore }) => {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						full_name: full_name,
-						email: email,
-						agenda_slug: "ToniCM",
-						address: address,
-						phone: phone
+						"full_name": full_name,
+						"email": email,
+						"agenda_slug": "ToniCM",
+						"address": address,
+						"phone": phone
 					})
 				})
 					.then(response => response.json())
