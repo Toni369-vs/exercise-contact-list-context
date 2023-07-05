@@ -7,12 +7,12 @@ const getState = ({ getStore, setStore }) => {
 		actions: {
 			// OBTERNER CONTACTO
 
-			getAllContacts: () => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/agenda", {
-					method: "GET"
-				})
+			getContacts: () => {
+				fetch("https://assets.breatheco.de/apis/fake/contact/agenda/ToniCM")
 					.then(response => response.json())
-					.then(data => setStore({ contacts: data }))
+					.then(data => {
+						setStore({ contacts: data });
+					})
 					.catch(error => console.log(error));
 			},
 
@@ -37,20 +37,20 @@ const getState = ({ getStore, setStore }) => {
 					.catch(error => console.log(error));
 			},
 
-			// MODIFICAR CONTACTO
+			MODIFICAR CONTACTO
 
-			updateContact: (full_name, address, phone, email) => {
+			updateOneContact: (full_name, address, phone, email) => {
 				fetch("https://assets.breatheco.de/apis/fake/contact/", {
 					method: "PUT",
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						full_name: full_name,
-						email: email,
-						agenda_slug: "ToniCM",
-						address: address,
-						phone: phone
+						"full_name": full_name,
+						"email": email,
+						"agenda_slug": "ToniCM",
+						"address": address,
+						"phone": phone
 					})
 				})
 					.then(response => response.json())
