@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import MikePhoto from "../../img/m101.jpg";
 
 export const ContactCard = props => {
-	// const [state, setState] = useState({});
+	const [state, setState] = useState({});
 
 	return (
 		<li className="list-group-item">
@@ -53,7 +53,8 @@ ContactCard.propTypes = {
 	full_name: PropTypes.string,
 	address: PropTypes.string,
 	email: PropTypes.string,
-	phone: PropTypes.string
+	phone: PropTypes.string,
+	id: PropTypes.string
 };
 
 ContactCard.defaultProps = {

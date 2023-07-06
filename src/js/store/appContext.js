@@ -11,7 +11,7 @@ const injectContext = PassedComponent => {
 		const [state, setState] = useState(
 			getState({
 				getStore: () => state.store,
-				getActions: () => state.actions.getAllContacts,
+				getActions: () => state.actions,
 				setStore: updatedStore =>
 					setState({
 						store: Object.assign(state.store, updatedStore),
