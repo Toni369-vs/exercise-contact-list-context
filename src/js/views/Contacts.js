@@ -6,10 +6,9 @@ import { UpdateContact } from "../views/UpdateContact.js";
 import { Context } from "../store/appContext.js";
 
 export const Contacts = () => {
-
 	const [state, setState] = useState({
 		showModal: false,
-		showUpdateContact: false,
+		showUpdateContact: false
 	});
 
 	const [idToContact, setIdToContact] = useState("");
@@ -35,11 +34,11 @@ export const Contacts = () => {
 								<ContactCard
 									onDelete={contactId => {
 										setIdToContact(contactId);
-										setShowModal(true);
+										setState(true);
 									}}
 									onUpdateContact={contactId => {
-										setIdToContact(contactId );
-										setShowModal(true);
+										setIdToContact(contactId);
+										setState(true);
 									}}
 									key={contact.id}
 									id={contact.id}

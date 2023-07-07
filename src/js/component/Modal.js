@@ -54,14 +54,12 @@ export const Modal = props => {
 	);
 };
 
-
 Modal.propTypes = {
 	history: PropTypes.object,
 	onClose: PropTypes.func,
 	show: PropTypes.bool,
-	contactToDelete: PropTypes.string
+	contactToId: PropTypes.string
 };
-
 
 Modal.defaultProps = {
 	show: false,

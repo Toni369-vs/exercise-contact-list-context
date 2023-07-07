@@ -12,17 +12,10 @@ export const ContactCard = props => {
 				</div>
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 					<div className=" float-right">
-						<button 
-						className="btn" 
-						onClick={() => props.onUpdateContact(props.id)
-						}>
+						<button className="btn" onClick={() => props.onUpdateContact(props.id)}>
 							<i className="fas fa-pencil-alt mr-3" />
 						</button>
-						<button
-							className="btn"
-							onClick={() => 
-								props.onDelete(props.id)
-							}>
+						<button className="btn" onClick={() => props.onDelete(props.id)}>
 							<i className="fas fa-trash-alt" />
 						</button>
 					</div>
@@ -52,6 +45,8 @@ export const ContactCard = props => {
 	);
 };
 
+// VALIDACIÓN PROPTYPES
+
 ContactCard.propTypes = {
 	history: PropTypes.object,
 	onDelete: PropTypes.func,
@@ -60,7 +55,7 @@ ContactCard.propTypes = {
 	email: PropTypes.string,
 	phone: PropTypes.string,
 	id: PropTypes.string,
-	onUpdateContact: PropTypes.func,
+	onUpdateContact: PropTypes.func
 };
 
 ContactCard.defaultProps = {

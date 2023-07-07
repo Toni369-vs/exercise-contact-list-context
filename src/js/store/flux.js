@@ -45,28 +45,28 @@ const getState = ({ getStore, setStore }) => {
 					.then(response => response.json())
 					.then(data => console.log(data))
 					.catch(error => console.log(error));
-			}
+			},
 
 			// MODIFICAR CONTACTO
 
-			// updateOneContact: (full_name, address, phone, email) => {
-			// 	fetch(`https://assets.breatheco.de/apis/fake/contact/${id}`, {
-			// 		method: "PUT",
-			// 		headers: {
-			// 			"Content-Type": "application/json"
-			// 		},
-			// 		body: JSON.stringify({
-			// 			full_name: full_name,
-			// 			email: email,
-			// 			agenda_slug: "ToniCM",
-			// 			address: address,
-			// 			phone: phone
-			// 		})
-			// 	})
-			// 		.then(response => response.json())
-			// 		.then(data => console.log(data))
-			// 		.catch(error => console.log(error));
-			// }
+			updateOneContact: (full_name, address, phone, email, id) => {
+				fetch(`https://assets.breatheco.de/apis/fake/contact/${id}`, {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						full_name: full_name,
+						email: email,
+						agenda_slug: "ToniCM",
+						address: address,
+						phone: phone
+					})
+				})
+					.then(response => response.json())
+					.then(data => console.log(data))
+					.catch(error => console.log(error));
+			}
 		}
 	};
 };
