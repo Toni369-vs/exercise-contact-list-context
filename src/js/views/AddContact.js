@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useNavigate } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const AddContact = () => {
 	const { store, actions } = useContext(Context);
 
-	const [createContact, setCreateContact] = useState({
+	const [newContact, setNewContact] = useState({
 		full_name: "",
 		email: "",
 		agenda_slug: "ToniCM",
@@ -13,21 +13,25 @@ export const AddContact = () => {
 		phone: ""
 	});
 
+	const navigate = useNavigate();
+
 	const handleChange = e => {
-		setCreateContact({ ...createContact, [e.target.name]: e.target.value });
+		setNewContact({ ...newContact, [e.target.name]: e.target.value });
 	};
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		actions.createContact(createContact.full_name, createContact.address, createContact.phone, createContact.email);
+		actions.createContact(newContact.full_name, newContact.address, newContact.phone, newContact.email);
 
-		setCreateContact({
+		setNewContact({
 			full_name: "",
 			email: "",
 			agenda_slug: "ToniCM",
 			address: "",
 			phone: ""
 		});
+
+		navigate("/");
 	};
 
 	return (

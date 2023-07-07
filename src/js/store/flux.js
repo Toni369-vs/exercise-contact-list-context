@@ -32,26 +32,20 @@ const getState = ({ getStore, setStore }) => {
 					})
 				})
 					.then(response => response.json())
-					.then(data => {
-						setStore({ contacts: data });
-					})
-					.catch(error => console.log(error));
-			}
+					.then(data => console.log(data))
+					.catch(error => console.error(error));
+			},
 
 			// ELIMINAR CONTACTO
 
-			// deleteContact: id => {
-			// 	fetch(`https://assets.breatheco.de/apis/fake/contact/${id}`, {
-			// 		method: "DELETE"
-			// 	})
-			// 		.then(response => response.json())
-			// 		.then(data => {
-			// 			setStore({ contacts: data });
-			// 		})
-			// 		.catch(error => {
-			// 			console.log(error);
-			// 		});
-			// },
+			deleteContact: id => {
+				fetch(`https://assets.breatheco.de/apis/fake/contact/${id}`, {
+					method: "DELETE"
+				})
+					.then(response => response.json())
+					.then(data => console.log(data))
+					.catch(error => console.log(error));
+			}
 
 			// MODIFICAR CONTACTO
 

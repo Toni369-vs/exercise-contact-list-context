@@ -1,11 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 
 export const Modal = props => {
-	const [state, setState] = useState({});
-
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -38,8 +36,7 @@ export const Modal = props => {
 							type="button"
 							className="btn btn-secondary"
 							data-dismiss="modal"
-							// onClick={actions.deleteContact(props.id)}
-						>
+							onClick={actions.deleteContact(props.contactToDelete)}>
 							Do it!
 						</button>
 					</div>
@@ -56,7 +53,7 @@ Modal.propTypes = {
 	history: PropTypes.object,
 	onClose: PropTypes.func,
 	show: PropTypes.bool,
-	id: PropTypes.string
+	contactToDelete: PropTypes.string
 };
 
 /**

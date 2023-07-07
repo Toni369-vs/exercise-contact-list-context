@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 import MikePhoto from "../../img/m101.jpg";
 
 export const ContactCard = props => {
-	const [state, setState] = useState({});
-
 	return (
 		<li className="list-group-item">
 			<div className="row w-100">
@@ -17,7 +15,11 @@ export const ContactCard = props => {
 						<button className="btn">
 							<i className="fas fa-pencil-alt mr-3" />
 						</button>
-						<button className="btn" onClick={() => props.onDelete()}>
+						<button
+							className="btn"
+							onClick={() => {
+								props.onDelete(props.id);
+							}}>
 							<i className="fas fa-trash-alt" />
 						</button>
 					</div>
