@@ -34,11 +34,11 @@ export const Contacts = () => {
 								<ContactCard
 									onDelete={contactId => {
 										setIdToContact(contactId);
-										setState(true);
+										setState({showModal: true});
 									}}
 									onUpdateContact={contactId => {
 										setIdToContact(contactId);
-										setState(true);
+										setState({showUpdateContact: true});
 									}}
 									key={contact.id}
 									id={contact.id}
