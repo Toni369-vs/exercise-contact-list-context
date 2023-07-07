@@ -29,14 +29,22 @@ export const Modal = props => {
 						<p>Warning: unknown consequences after this point... Kidding!</p>
 					</div>
 					<div className="modal-footer">
-						<button type="button" className="btn btn-primary">
+						<button
+							type="button"
+							onClick={() => {
+								props.onClose();
+							}}
+							className="btn btn-primary">
 							Oh no!
 						</button>
 						<button
 							type="button"
 							className="btn btn-secondary"
-							data-dismiss="modal"
-							onClick={actions.deleteContact(props.contactToDelete)}>
+							onClick={() => {
+								actions.deleteContact(props.contactToId);
+								props.onClose();
+							}}
+							data-dismiss="modal">
 							Do it!
 						</button>
 					</div>
@@ -45,10 +53,8 @@ export const Modal = props => {
 		</div>
 	);
 };
-/**
- * Define the data-types for
- * your component's properties
- **/
+
+
 Modal.propTypes = {
 	history: PropTypes.object,
 	onClose: PropTypes.func,
@@ -56,10 +62,7 @@ Modal.propTypes = {
 	contactToDelete: PropTypes.string
 };
 
-/**
- * Define the default values for
- * your component's properties
- **/
+
 Modal.defaultProps = {
 	show: false,
 	onClose: null

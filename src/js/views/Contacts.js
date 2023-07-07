@@ -2,11 +2,17 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { ContactCard } from "../component/ContactCard.js";
 import { Modal } from "../component/Modal";
+import { UpdateContact } from "../views/UpdateContact.js";
 import { Context } from "../store/appContext.js";
 
 export const Contacts = () => {
-	const [showModal, setShowModal] = useState(false);
-	const [idToDelete, setIdToDelete] = useState("");
+
+	const [state, setState] = useState({
+		showModal: false,
+		showUpdateContact: false,
+	});
+
+	const [idToContact, setIdToContact] = useState("");
 	const { store, actions } = useContext(Context);
 
 	useEffect(() => {
@@ -27,8 +33,12 @@ export const Contacts = () => {
 							// console.log(contact.id); // Imprimir el id en la consola
 							return (
 								<ContactCard
-									onDelete={contactIdToDelete => {
-										setIdToDelete(contactIdToDelete);
+									onDelete={contactId => {
+										setIdToContact(contactId);
+										setShowModal(true);
+									}}
+									onUpdateContact={contactId => {
+										setIdToContact(contactId );
 										setShowModal(true);
 									}}
 									key={contact.id}
@@ -43,7 +53,8 @@ export const Contacts = () => {
 					</ul>
 				</div>
 			</div>
-			<Modal show={showModal} onClose={() => setShowModal(false)} contactToDelete={idToDelete} />
+			<Modal show={state.showModal} onClose={() => setState(false)} contactToId={idToContact} />
+			<UpdateContact show={state.showUpdateContact} onClose={() => setState(false)} contactToId={idToContact} />
 		</div>
 	);
 };

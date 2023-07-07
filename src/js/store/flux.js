@@ -50,7 +50,7 @@ const getState = ({ getStore, setStore }) => {
 			// MODIFICAR CONTACTO
 
 			// updateOneContact: (full_name, address, phone, email) => {
-			// 	fetch("https://assets.breatheco.de/apis/fake/contact/5037", {
+			// 	fetch(`https://assets.breatheco.de/apis/fake/contact/${id}`, {
 			// 		method: "PUT",
 			// 		headers: {
 			// 			"Content-Type": "application/json"

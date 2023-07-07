@@ -38,7 +38,7 @@ export const AddContact = () => {
 		<div className="container">
 			<div>
 				<h1 className="text-center mt-5">Add a new contact</h1>
-				<form>
+				<form id="form" onSubmit={handleSubmit}>
 					<div className="form-group">
 						<label>Full Name</label>
 						<input
@@ -79,7 +79,7 @@ export const AddContact = () => {
 							onChange={handleChange}
 						/>
 					</div>
-					<button type="submit" className="btn btn-primary form-control" onSubmit={handleSubmit}>
+					<button type="submit" className="btn btn-primary form-control">
 						save
 					</button>
 					<Link className="mt-3 w-100 text-center" to="/">

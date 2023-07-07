@@ -12,14 +12,17 @@ export const ContactCard = props => {
 				</div>
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 					<div className=" float-right">
-						<button className="btn">
+						<button 
+						className="btn" 
+						onClick={() => props.onUpdateContact(props.id)
+						}>
 							<i className="fas fa-pencil-alt mr-3" />
 						</button>
 						<button
 							className="btn"
-							onClick={() => {
-								props.onDelete(props.id);
-							}}>
+							onClick={() => 
+								props.onDelete(props.id)
+							}>
 							<i className="fas fa-trash-alt" />
 						</button>
 					</div>
@@ -56,9 +59,11 @@ ContactCard.propTypes = {
 	address: PropTypes.string,
 	email: PropTypes.string,
 	phone: PropTypes.string,
-	id: PropTypes.string
+	id: PropTypes.string,
+	onUpdateContact: PropTypes.func,
 };
 
 ContactCard.defaultProps = {
-	onDelete: null
+	onDelete: null,
+	onUpdateContact: null
 };
