@@ -48,7 +48,7 @@ pages/Contacts.js: El componente de página para mostrar la lista de contactos y
 
 
 Conclusión
-Este proyecto de Agenda de Contactos con Flux demuestra cómo utilizar la arquitectura Flux para gestionar el estado de la aplicación y realizar operaciones CRUD en una agenda de contactos. Proporciona una estructura básica que se puede ampliar para construir aplicaciones más complejas con Flux y React. Siéntete libre de explorar y modificar el código según tus necesidades.![image](https://github.com/Toni369-vs/exercise-contact-list-context/assets/125910370/11fb8309-1272-4a69-bea0-d3f84bd14fac)
+Este proyecto de Agenda de Contactos con Flux demuestra cómo utilizar la arquitectura Flux para gestionar el estado de la aplicación y realizar operaciones CRUD en una agenda de contactos. Proporciona una estructura básica que se puede ampliar para construir aplicaciones más complejas con Flux y React. Siéntete libre de explorar y modificar el código según tus necesidades.
 
 
 
