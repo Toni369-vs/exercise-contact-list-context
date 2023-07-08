@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { ContactCard } from "../component/ContactCard.js";
 import { Modal } from "../component/Modal";
-import { UpdateContact } from "../views/UpdateContact.js";
+import { UpdateContact } from "../component/UpdateContact.js";
 import { Context } from "../store/appContext.js";
 
 export const Contacts = () => {
@@ -34,11 +34,11 @@ export const Contacts = () => {
 								<ContactCard
 									onDelete={contactId => {
 										setIdToContact(contactId);
-										setState({showModal: true});
+										setState({ showModal: true });
 									}}
 									onUpdateContact={contactId => {
 										setIdToContact(contactId);
-										setState({showUpdateContact: true});
+										setState({ showUpdateContact: true });
 									}}
 									key={contact.id}
 									id={contact.id}

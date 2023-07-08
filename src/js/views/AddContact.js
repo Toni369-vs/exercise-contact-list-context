@@ -1,4 +1,4 @@
-import React, { useState, useContext, useNavigate } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -12,8 +12,6 @@ export const AddContact = () => {
 		address: "",
 		phone: ""
 	});
-
-	const navigate = useNavigate();
 
 	const handleChange = e => {
 		setNewContact({ ...newContact, [e.target.name]: e.target.value });
@@ -30,8 +28,6 @@ export const AddContact = () => {
 			address: "",
 			phone: ""
 		});
-
-		navigate("/");
 	};
 
 	return (

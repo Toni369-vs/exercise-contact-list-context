@@ -15,12 +15,13 @@ export const UpdateContact = props => {
 	});
 
 	const handleChange = e => {
-		setUpdateContact({ ...newContact, [e.target.name]: e.target.value });
+		setUpdateContact({ ...updateContact, [e.target.name]: e.target.value });
 	};
 
 	const handleSubmit = e => {
 		e.preventDefault();
 		actions.updateOneContact(
+			props.contactToId,
 			updateContact.full_name,
 			updateContact.address,
 			updateContact.phone,
@@ -97,7 +98,10 @@ export const UpdateContact = props => {
 									onChange={handleChange}
 								/>
 							</div>
-							<button type="submit" className="btn btn-primary form-control">
+							<button
+								type="submit"
+								className="btn btn-primary form-control"
+								onClick={() => props.onClose()}>
 								save
 							</button>
 						</form>
@@ -112,7 +116,8 @@ UpdateContact.propTypes = {
 	history: PropTypes.object,
 	onClose: PropTypes.func,
 	show: PropTypes.bool,
-	id: PropTypes.string
+	id: PropTypes.string,
+	contactToId: PropTypes.string
 };
 
 UpdateContact.defaultProps = {
