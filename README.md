@@ -1,76 +1,57 @@
-<!-- hide -->
-# Contact Management Application 
-<!-- endhide -->
+Agenda de Contactos con Flux
+Este es un proyecto simple que utiliza la arquitectura Flux para gestionar una agenda de contactos. Permite crear, leer, actualizar y eliminar contactos de una base de datos. El proyecto está construido utilizando React y React Router para el frontend, y se comunica con una API RESTful para realizar las operaciones CRUD en los contactos.
 
-Technologies: HTML, CSS, JS, React, React Router, and Context.
 
-Hello! It is time to start doing professional front-end applications. This time
-we will be creating a small contact management application that allows users to:
-Read, Create, Update and Delete contacts. 
+![image](https://github.com/Toni369-vs/exercise-contact-list-context/assets/125910370/8880c481-d15d-4a51-9312-4c399b561aff)
 
-You may use this gif: [Check it out here!](https://github.com/breatheco-de/exercise-contact-list/blob/master/preview.gif?raw=true)
 
-Or you can use these images:
-[Image 1](https://github.com/breatheco-de/exercise-contact-list-context/blob/master/src/img/contact-list-1.png?raw=true) and
-[Image 2](https://github.com/breatheco-de/exercise-contact-list-context/blob/master/src/img/contact-list-2.png?raw=true)
+Características
+Crear un nuevo contacto con nombre completo, correo electrónico, dirección y número de teléfono.
+Ver una lista de todos los contactos en la agenda.
+Actualizar la información de un contacto existente.
+Eliminar un contacto de la agenda.
+Empezar
+Para comenzar con el proyecto, sigue estos pasos:
 
-## 🌱  How to start this project
+Clona el repositorio: git clone <repository-url>
+"node-sass": "^7.0.1",
+nvm install 14.16.1
+nvm use 14.16.1
+npm cache clean --force
+npm i && npm run start
 
-Do not clone this repository because we are going to be using a different template.
+La aplicación te permite realizar las siguientes acciones:
 
-We recommend opening the `react boilerplate` using a provisioning tool like [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recommended) or [Gitpod](https://4geeks.com/lesson/how-to-use-gitpod). Alternatively, you can clone it on your local computer using the `git clone` command.
+Crear un contacto: Haz clic en el botón "Agregar nuevo contacto" en la página principal. Completa los detalles del contacto y haz clic en "Guardar" para añadir el contacto a la agenda.
+Ver contactos: En la página principal, puedes ver una lista de todos los contactos en la agenda. Cada contacto se muestra con su nombre completo, dirección, número de teléfono y correo electrónico. También puedes ver su foto de perfil.
+Actualizar un contacto: Para actualizar la información de un contacto, haz clic en el ícono de lápiz junto al contacto. Esto abrirá un modal con un formulario donde puedes editar los detalles del contacto. Haz clic en "Guardar" para actualizar el contacto.
+Eliminar un contacto: Para eliminar un contacto, haz clic en el ícono de papelera junto al contacto. Esto abrirá un modal de confirmación. Haz clic en "¡Hazlo!" para eliminar el contacto de forma permanente.
+Integración con la API
+La aplicación se integra con una API RESTful para realizar las operaciones CRUD en los contactos. Los endpoints de la API utilizados son los siguientes:
 
-This is the repository you need to open or clone:
+GET /contact/agenda/ToniCM: Obtener todos los contactos en la agenda.
+POST /contact: Crear un nuevo contacto.
+PUT /contact/:id: Actualizar un contacto existente.
+DELETE /contact/:id: Eliminar un contacto.
+La URL base de la API es https://assets.breatheco.de/apis/fake/. El slug de la agenda utilizado es "ToniCM". Las solicitudes a la API se realizan utilizando el Fetch API.
 
-```
-https://github.com/4GeeksAcademy/react-hello-webapp
-```
+Estructura del Proyecto
+El proyecto sigue una estructura modular con los siguientes componentes principales, además de otros no mencionados:
 
-**👉 Please follow these steps on** [how to start a coding project](https://4geeks.com/lesson/how-to-start-a-project).
+App.js: El componente principal que maneja el enrutamiento y proporciona el contexto de la aplicación.
+store/appContext.js: El store Flux y el proveedor de contexto. Contiene el estado de la aplicación y las acciones para gestionar los contactos.
+component/ContactCard.js: Un componente reutilizable para mostrar una tarjeta de contacto con su información.
+component/Modal.js: Un componente modal para mostrar un cuadro de diálogo de confirmación antes de eliminar un contacto.
+component/UpdateContact.js: Un componente modal para actualizar la información de un contacto.
+pages/AddContact.js: El componente de página para agregar un nuevo contacto.
+pages/Contacts.js: El componente de página para mostrar la lista de contactos y manejar las operaciones CRUD.
 
-💡 Important: Remember to save and upload your code to GitHub by creating a new repository, updating the remote (`git remote set-url origin <your new url>`), and uploading the code to your new repository using the `add`, `commit` and `push` commands from the git terminal.
 
-2. Install the /node_modules
-```
-$ npm install
-```
-3. Run the webpack development server
-```
-$ npm run start
-```
+Conclusión
+Este proyecto de Agenda de Contactos con Flux demuestra cómo utilizar la arquitectura Flux para gestionar el estado de la aplicación y realizar operaciones CRUD en una agenda de contactos. Proporciona una estructura básica que se puede ampliar para construir aplicaciones más complejas con Flux y React. Siéntete libre de explorar y modificar el código según tus necesidades.![image](https://github.com/Toni369-vs/exercise-contact-list-context/assets/125910370/11fb8309-1272-4a69-bea0-d3f84bd14fac)
 
-This boilerplate contains no real functionalities but it has 99.99% of the HTML/CSS that you'll need for the project, allowing you to focus on the functionality.
 
-**Please use the Context for this project:** The boilerplate comes with the Context configured. Check the ```/store``` folder.
 
-**Note: You'll need to code all functionalities.**
 
-### :memo: This project is divided in: 
-
-#### :two: different views: 
-
-1. Contact: Contains the list of contacts.
-2. AddContact: It's just a form used to create or update contacts.
-
-#### One component:
-ContactCard: displays just one contact.
-
-## TO-DO functionalities
-
-- You have to add the code needed to make your application handle contacts, specifically: 
-    - create, 
-    - update, 
-    - and delete.
-- (Optional) Ask the user for confirmation before deleting, use the Modal component for that.
-
-All the functionalities must be implemented in the ```actions``` object (store.js).
-
-Hint: start with some dummy content in the store (store.js).
-
-```Fetch``` the data from the API: https://assets.breatheco.de/apis/fake/contact/
-
-Hint: Use Postman to try the API endpoints before coding.  
-
-That is it! Start coding your React Application :)
-
-This and many other projects are built by students as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
+Conclusión
+Este proyecto de Agenda de Contactos con Flux demuestra cómo utilizar la arquitectura Flux para gestionar el estado de la aplicación y realizar operaciones CRUD en una agenda de contactos. Proporciona una estructura básica que se puede ampliar para construir aplicaciones más complejas con Flux y React. Siéntete libre de explorar y modificar el código según tus necesidades.
