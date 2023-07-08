@@ -53,5 +53,3 @@ Este proyecto de Agenda de Contactos con Flux demuestra cómo utilizar la arquit
 
 
 
-Conclusión
-Este proyecto de Agenda de Contactos con Flux demuestra cómo utilizar la arquitectura Flux para gestionar el estado de la aplicación y realizar operaciones CRUD en una agenda de contactos. Proporciona una estructura básica que se puede ampliar para construir aplicaciones más complejas con Flux y React. Siéntete libre de explorar y modificar el código según tus necesidades.
